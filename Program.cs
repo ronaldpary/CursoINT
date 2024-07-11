@@ -1,53 +1,111 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace CursoINT
 {
     class Progam
     {
         static void Main(string[] args)
-        { 
-            Queue miFila = new Queue();
-            //primera persona en llegar luis
-            miFila.Enqueue("Luis");
-            miFila.Enqueue("Pedrio");
-            miFila.Enqueue("Laura");
+        {
 
-            Stack miPila = new Stack();
+            // LISTAS 
+            List<string> lista_de_alumnos = new List<String>();
 
-            miPila.Push("Luis");
-            miPila.Push("Laura");
-            miPila.Push("David");
+            lista_de_alumnos.Add("Luis");
+            lista_de_alumnos.Add("Jaimre");
+            lista_de_alumnos.Add("Laura");
 
-            Console.WriteLine(miPila.Count);
-
-            miPila.Clear();
-
-            Console.WriteLine(miPila.Count);
-
-            int tamannioPila = miPila.Count;
-
-            for (int i = 0; i < tamannioPila; i++)
+            List<string> lista_de_alumnos2 = new List<String>()
             {
-                Console.WriteLine("Los valores de la pila son" + miPila.Pop());
+                "Paco",
+                "Lupita",
+                "Joel",
+                "Luis"
+            };
+
+            if (lista_de_alumnos[0] == lista_de_alumnos2[3])
+            {
+                Console.WriteLine("Son el mismo");
             }
 
-            Queue filaClon = (Queue)miFila.Clone();
+            lista_de_alumnos2.Insert(2, "Kevi");
+            lista_de_alumnos2.Add("JIL");
+
+            //lista_de_alumnos2.RemoveAt(0);
+            //lista_de_alumnos2.RemoveAt(0);
+
+            //lista_de_alumnos2.Remove("Joel");
+
+            lista_de_alumnos2.RemoveAll(nombre => {
+                if (nombre.StartsWith("J"))
+                    return true;
+                else
+                    return false;
+            });
 
 
-            Console.WriteLine(miFila.Count);
-            for (int i = 0; i < 3; i ++)
+            lista_de_alumnos2.Add("Alber");
+
+            lista_de_alumnos2.Sort();
+            lista_de_alumnos2.Reverse();
+
+            foreach (string alumno in lista_de_alumnos)
             {
-                Console.WriteLine("La señora atendera a:" + miFila.Dequeue());
+                Console.WriteLine(alumno);
             }
 
-            Console.WriteLine(miFila.Count);
+            Console.WriteLine("\n");
 
-            Console.WriteLine("Los valores de filaclon son: " + filaClon.Count);
+            for (int cont = 0; cont < lista_de_alumnos2.Count; cont++)
+            {
+                Console.WriteLine(lista_de_alumnos2[cont]);
+            }
 
-            filaClon.Clear();
 
-            Console.WriteLine("Los valores de filaclon son: " + filaClon.Count);
+            //PILAS Y FILAS
+
+            //Queue miFila = new Queue();
+            ////primera persona en llegar luis
+            //miFila.Enqueue("Luis");
+            //miFila.Enqueue("Pedrio");
+            //miFila.Enqueue("Laura");
+
+            //Stack miPila = new Stack();
+
+            //miPila.Push("Luis");
+            //miPila.Push("Laura");
+            //miPila.Push("David");
+
+            //Console.WriteLine(miPila.Count);
+
+            //miPila.Clear();
+
+            //Console.WriteLine(miPila.Count);
+
+            //int tamannioPila = miPila.Count;
+
+            //for (int i = 0; i < tamannioPila; i++)
+            //{
+            //    Console.WriteLine("Los valores de la pila son" + miPila.Pop());
+            //}
+
+            //Queue filaClon = (Queue)miFila.Clone();
+
+
+            //Console.WriteLine(miFila.Count);
+            //for (int i = 0; i < 3; i ++)
+            //{
+            //    Console.WriteLine("La señora atendera a:" + miFila.Dequeue());
+            //}
+
+            //Console.WriteLine(miFila.Count);
+
+            //Console.WriteLine("Los valores de filaclon son: " + filaClon.Count);
+
+            //filaClon.Clear();
+
+            //Console.WriteLine("Los valores de filaclon son: " + filaClon.Count);
         }
     }
 }
