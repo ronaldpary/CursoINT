@@ -8,15 +8,8 @@ namespace CursoINT
     {
         static void Main(string[] args)
         {
-
-            // LISTAS 
-            List<string> lista_de_alumnos = new List<String>();
-
-            lista_de_alumnos.Add("Luis");
-            lista_de_alumnos.Add("Jaimre");
-            lista_de_alumnos.Add("Laura");
-
-            List<string> lista_de_alumnos2 = new List<String>()
+            // CICLOS ANIDADOS
+            List<string> lista_de_alumnos = new List<string>()
             {
                 "Paco",
                 "Lupita",
@@ -24,43 +17,86 @@ namespace CursoINT
                 "Luis"
             };
 
-            if (lista_de_alumnos[0] == lista_de_alumnos2[3])
+            List<string> lista_de_alumnos2 = new List<string>()
             {
-                Console.WriteLine("Son el mismo");
+                "Paco",
+                "Lupita",
+                "Joel",
+                "Luis",
+                "Paco",
+                "Paco",
+                "Lupita",
+                "Luis"
+            };
+
+            for (int i = 0; i < lista_de_alumnos.Count; i++)
+            {
+                int contador = 0;
+
+                for (int h = 0; h < lista_de_alumnos2.Count; h++)
+                {
+                    if (lista_de_alumnos[i] == lista_de_alumnos2[h])
+                    {
+                        contador++;
+                    }
+                    
+                }
+
+                Console.WriteLine("EL nombre" + lista_de_alumnos[i] + "aparece" + contador + "veces");
             }
 
-            lista_de_alumnos2.Insert(2, "Kevi");
-            lista_de_alumnos2.Add("JIL");
+            // LISTAS 
+            //List<string> lista_de_alumnos = new List<string>();
+
+            //lista_de_alumnos.Add("Luis");
+            //lista_de_alumnos.Add("Jaimre");
+            //lista_de_alumnos.Add("Laura");
+
+            //List<string> lista_de_alumnos2 = new List<string>()
+            //{
+            //    "Paco",
+            //    "Lupita",
+            //    "Joel",
+            //    "Luis"
+            //};
+
+            //if (lista_de_alumnos[0] == lista_de_alumnos2[3])
+            //{
+            //    Console.WriteLine("Son el mismo");
+            //}
+
+            //lista_de_alumnos2.Insert(2, "Kevi");
+            //lista_de_alumnos2.Add("JIL");
 
             //lista_de_alumnos2.RemoveAt(0);
             //lista_de_alumnos2.RemoveAt(0);
 
             //lista_de_alumnos2.Remove("Joel");
 
-            lista_de_alumnos2.RemoveAll(nombre => {
-                if (nombre.StartsWith("J"))
-                    return true;
-                else
-                    return false;
-            });
+            //lista_de_alumnos2.RemoveAll(nombre => {
+            //    if (nombre.StartsWith("J"))
+            //        return true;
+            //    else
+            //        return false;
+            //});
 
 
-            lista_de_alumnos2.Add("Alber");
+            //lista_de_alumnos2.Add("Alber");
 
-            lista_de_alumnos2.Sort();
-            lista_de_alumnos2.Reverse();
+            //lista_de_alumnos2.Sort();
+            //lista_de_alumnos2.Reverse();
 
-            foreach (string alumno in lista_de_alumnos)
-            {
-                Console.WriteLine(alumno);
-            }
+            //foreach (string alumno in lista_de_alumnos)
+            //{
+            //    Console.WriteLine(alumno);
+            //}
 
-            Console.WriteLine("\n");
+            //Console.WriteLine("\n");
 
-            for (int cont = 0; cont < lista_de_alumnos2.Count; cont++)
-            {
-                Console.WriteLine(lista_de_alumnos2[cont]);
-            }
+            //for (int cont = 0; cont < lista_de_alumnos2.Count; cont++)
+            //{
+            //    Console.WriteLine(lista_de_alumnos2[cont]);
+            //}
 
 
             //PILAS Y FILAS
